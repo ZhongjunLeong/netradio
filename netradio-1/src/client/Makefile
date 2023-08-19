@@ -1,10 +1,10 @@
-CFLAGS+=-I../include/
+CFLAGS+=-Wall -g -I../include
+CC=gcc
+all : client
+
+client : client.o
+	$(CC) $^ -o $@ $(CFLAGS)
 
 
-all:client
-
-client:main.o
-     gcc $^ -o $@ $(CFLAGS)
-
-clen:
-    rm -rf *.o client
+clean : 
+	rm -rf *.o client
